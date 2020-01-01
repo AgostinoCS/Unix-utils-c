@@ -1,0 +1,2 @@
+#!/bin/sh
+gcc mv.c -std=c11 -o /bin/mv
