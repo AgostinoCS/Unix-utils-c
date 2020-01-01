@@ -1,2 +1,3 @@
 #!/bin/sh
+gcc echo.c -std=c11 -o /bin/echo
 gcc mv.c -std=c11 -o /bin/mv

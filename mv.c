@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
         exit(1);
     }
     if (argc > 3){
-        fprintf(stderr, "%s: too many arguments\n");
+        fprintf(stderr, "%s: too many arguments\n", argv[0]);
         usage(argv[0]);
         exit(2);
     }
