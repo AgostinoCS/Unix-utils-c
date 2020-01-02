@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "utils.h"
-#define VERSION "1.0-alpha"
 
 void usage(char *);
 void help(char *);
