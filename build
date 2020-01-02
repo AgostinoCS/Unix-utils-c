@@ -1,4 +1,5 @@
 #!/bin/sh
 gcc cat.c -std=c11 -o /bin/cat
+gcc cp.c -std=c11 -o /bin/cp
 gcc echo.c -std=c11 -o /bin/echo
 gcc mv.c -std=c11 -o /bin/mv
