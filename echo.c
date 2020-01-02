@@ -2,14 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#define VERSION "1.0-alpha"
 
 void usage(char *);
+void help(char *);
 
 int main(int argc, char *argv[]) {
    if(argc == 1){
    printf("%s", "\n");
    exit(0);
    }
+    if (strcmp(argv[1], "--help") == 0){
+        help(argv[0]);
+        exit(1);
+    }
+    if (strcmp(argv[1], "--version") == 0){
+        puts(VERSION);
+        exit(2);
+    }
    bool n = false;
    int i = 1;
 
@@ -17,10 +27,7 @@ int main(int argc, char *argv[]) {
       if(argv[1][1] == 'n'){
          n = true;
          i = 2;
-      } if(argv[1][1] == 'h') {
-           usage(argv[0]);
-           exit(0);
-      }
+      } 
 
    for(;i < argc; i++) {
       printf("%s",argv[i]);
@@ -33,8 +40,13 @@ int main(int argc, char *argv[]) {
 }
 
 void usage(char *progName){
-   printf("echo - display a line of text\n");
-   printf("%s [option] [string]\n\n", progName);
-   printf("-n\tdo not output the trailing newline\n");
-   printf("-h\tdisplay this help and exit\n\n");
+   printf("\n%s [option] [string]\n", progName);
+}
+
+void help(char *progName){
+   printf("\necho - display a line of text\n");
+   usage(progName);
+   printf("\n-n\tdo not output the trailing newline\n");
+   printf("\n--help\tdisplay this help and exit\n");
+   printf("--version\t output version information and exit\n\n");
 }
