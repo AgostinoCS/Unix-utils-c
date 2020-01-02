@@ -30,7 +30,7 @@ int main(int argc, char *argv[]){
         fprintf(stderr, "%s: cannot open %s\n", argv[0], argv[1]);
         exit(-2);
     }
-    if ((to = fopen(argv[2], "r")) == NULL){
+    if ((to = fopen(argv[2], "w")) == NULL){
         fprintf(stderr, "%s: cannot open or create %s\n", argv[0], argv[2]);
         exit(-3);
     }    

@@ -30,8 +30,15 @@ int main(int argc, char *argv[]){
         usage(argv[0]);
         exit(-2);
     }
-    FILE *from = fopen(argv[1], "r");
-    FILE *to = fopen(argv[2], "w");
+    FILE *from, *to;
+    if ((from = fopen(argv[1], "r")) == NULL){
+        fprintf(stderr, "%s: cannot open %s\n", argv[0], argv[1]);
+        exit(-2);
+    }
+    if ((to = fopen(argv[2], "w")) == NULL){
+        fprintf(stderr, "%s: cannot open or create %s\n", argv[0], argv[2]);
+        exit(-3);
+    }
     fileCopy(from, to);
     remove(argv[1]);
     return 0;
