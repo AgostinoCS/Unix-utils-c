@@ -3,3 +3,4 @@ gcc cat.c -std=c11 -o /bin/cat
 gcc cp.c -std=c11 -o /bin/cp
 gcc echo.c -std=c11 -o /bin/echo
 gcc mv.c -std=c11 -o /bin/mv
+gcc yes.c -std=c11 -o /usr/bin/yes
